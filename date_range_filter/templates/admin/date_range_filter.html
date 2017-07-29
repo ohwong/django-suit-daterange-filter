@@ -1,8 +1,9 @@
+{% load i18n admin_static %}
+
 <div class="date_range_filter">
     {{ spec.form.media }}
     {% for field in spec.form %}
-        <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
-
+        <label for="{{ field.id_for_label }}"> {{ field.label }}{% blocktrans with filter_title=title %} {{ filter_title }} {% endblocktrans %}:</label>
         {{ field }}
     {% endfor %}
 </div>
